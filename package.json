@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "live-server-https": "^0.0.2"
+  }
+}

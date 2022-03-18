@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>AUGART demo</title>
+    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+    <!-- <script src="./script.js"></script> -->
+  </head>
+
+  <body style='margin: 0; overflow: hidden;'>
+    <a-scene vr-mode-ui="enabled: false" embedded 
+    arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; videoTexture: true; debugUIEnabled: false;'>
+      <!-- <a-camera gps-camera rotation-reader>
+      </a-camera> -->
+      <!-- <a-box material="color: yellow" gps-entity-place="latitude: 40.953634; longitude: -76.883323" position="0 30 0"/> -->
+
+      <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" position="0 0 0">
+        <a-entity id="camera" camera look-controls></a-entity>
+      </a-entity> -->
+
+      <!-- <a-assets>
+        <a-asset-item id="pok" src=""></a-asset-item>
+      </a-assets> -->
+      <a-entity gltf-model="assets/adamHead/adamHead.gltf"></a-entity>
+      <!-- <a-image src="assets/nian.jpg"></a-image> -->
+      <!-- define a camera which will move according to the marker position -->
+      <a-marker-camera preset='hiro'></a-marker-camera>
+    </a-scene>
+  </body>
+
+</html>
