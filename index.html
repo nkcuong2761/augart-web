@@ -12,7 +12,7 @@
     <script>
       THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
-    <script src='/src/script.js'></script>
+    <!-- <script src='/src/script.js'></script> -->
   </head>
 
   <body style="margin: 0; overflow: hidden;">
@@ -20,6 +20,16 @@
       vr-mode-ui="enabled: false"
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false">
+      <a-entity id="parent" position="0 0 0" gps-entity-place="latitude: 40.95501595681849; longitude: -76.88195822931112" gltf-model="assets/magnemite/scene.gltf" scale="0.5 0.5 0.5" rotation="0 40 0" animation-mixer>
+        <a-entity id="child" position=" 200 -150 -40" gltf-model="assets/the_deadly_spawn_animation/scene.gltf" scale="14 14 14" rotation="0 -50 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="-90 -70 100" gltf-model="assets/tom/tom2.gltf" scale="30 30 30" rotation="0 0 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="-20 -10 10" gltf-model="assets/young_marceline_horror/scene.gltf" scale="1 1 1" rotation="0 0 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="120 -60 80" gltf-model="assets/adamHead/adamHead.gltf" scale="20 20 20" rotation="0 60 0" animation-mixer>
+        </a-entity>
+      </a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
