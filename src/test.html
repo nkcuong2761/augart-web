@@ -13,24 +13,31 @@
       THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
     <script>
-      window.onload = () => {
-        navigator.geolocation.getCurrentPosition((position) => {
-          console.log(position.coords.longitude, position.coords.latitude )
+      navigator.geolocation.getCurrentPosition((position) => {
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
+        console.log(lat, lng);
       });
-     }
     </script>
     <!-- <script src='/src/script.js'></script> -->
   </head>
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene
-      gps-camera-debug
       vr-mode-ui="enabled: false"
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false">
-      <!-- <a-camera gps-camera rotation-reader> </a-camera> -->
+      <a-entity id="parent" position="0 0 0" gps-entity-place="latitude: 40.956773421830896; longitude: -76.88482320909789" gltf-model="assets/magnemite/scene.gltf" scale="0.5 0.5 0.5" rotation="0 40 0" animation-mixer>
+        <a-entity id="child" position=" 500 -400 -500" gltf-model="assets/the_deadly_spawn/scene.gltf" scale="50 50 50" rotation="0 -50 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="-200 -70 300" gltf-model="assets/tom/tom2.gltf" scale="30 30 30" rotation="0 0 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="-20 -10 10" gltf-model="assets/young_marceline_horror/scene.gltf" scale="1 1 1" rotation="0 0 0" animation-mixer>
+        </a-entity>
+        <a-entity id="child" position="120 -60 80" gltf-model="assets/adamHead/adamHead.gltf" scale="20 20 20" rotation="0 60 0" animation-mixer>
+        </a-entity>
+      </a-entity>
       <a-camera gps-camera rotation-reader></a-camera>
-      <a-box color="yellow" gps-entity-place="latitude: 40.95498191779658; longitude: -76.88178070116413" position="0 0 0"/>
     </a-scene>
   </body>
 </html>

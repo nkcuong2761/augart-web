@@ -1,36 +1,18 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-      THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-    <!-- <script src='/src/script.js'></script> -->
+    <title>Geoposition example</title>
+    <meta name="description" content="Hello, World! Geolocation Argon + A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/argonjs/argon/develop/dist/argon.js"></script>
+    <script src="https://rawgit.com/argonjs/argon-aframe/master/dist/argon-aframe.js"></script>
+    <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+	  <link rel="stylesheet" type="text/css" href="../resources/style.css"> 
   </head>
-
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false">
-      <a-entity id="parent" position="0 0 0" gps-entity-place="latitude: 40.95501595681849; longitude: -76.88195822931112" gltf-model="assets/magnemite/scene.gltf" scale="0.5 0.5 0.5" rotation="0 40 0" animation-mixer>
-        <a-entity id="child" position=" 200 -150 -40" gltf-model="assets/the_deadly_spawn_animation/scene.gltf" scale="14 14 14" rotation="0 -50 0" animation-mixer>
-        </a-entity>
-        <a-entity id="child" position="-90 -70 100" gltf-model="assets/tom/tom2.gltf" scale="30 30 30" rotation="0 0 0" animation-mixer>
-        </a-entity>
-        <a-entity id="child" position="-20 -10 10" gltf-model="assets/young_marceline_horror/scene.gltf" scale="1 1 1" rotation="0 0 0" animation-mixer>
-        </a-entity>
-        <a-entity id="child" position="120 -60 80" gltf-model="assets/adamHead/adamHead.gltf" scale="20 20 20" rotation="0 60 0" animation-mixer>
-        </a-entity>
-      </a-entity>
-      <a-camera gps-camera rotation-reader></a-camera>
-    </a-scene>
+  <body>
+    <ar-scene>
+      <ar-geopose id="GT" lla=" -76.88349459832183 40.95460659057451 300" userotation="false"> 
+        <a-sphere position="0 2 -1" radius="100" color="#EF2D5E"></a-sphere>
+      </ar-geopose>
+  </ar-scene>
   </body>
 </html>
